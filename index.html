@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Exam Study Hub</title>
 
@@ -24,13 +28,35 @@
                 <p class="header-subtitle">Middle Exams</p>
             </div>
 
-            <button id="theme-toggle" title="Change theme">
-                🌙
-            </button>
+
+            <div class="header-actions">
+
+                <div id="user-area">
+
+                    <button
+                        id="login-open-button"
+                        class="account-button"
+                    >
+                        👤 Login
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="theme-toggle"
+                    class="theme-button"
+                    title="Change theme"
+                >
+                    🌙
+                </button>
+
+            </div>
 
         </div>
 
     </header>
+
 
 
     <!-- ================= MAIN ================= -->
@@ -42,37 +68,68 @@
 
         <section class="hero">
 
-            <h2>My Exam Materials</h2>
+            <p class="hero-label">
+                STUDY DASHBOARD
+            </p>
+
+            <h2>
+                Middle Exam Materials
+            </h2>
 
             <p>
-                Everything I need to study in one place.
+                All my subjects, files and study progress in one place.
             </p>
 
         </section>
 
 
+
+        <!-- USER STATUS -->
+
+        <div
+            id="account-status"
+            class="account-status"
+        >
+            You are using Guest Mode.
+            Login to keep separate progress for your account.
+        </div>
+
+
+
         <!-- ================= PROGRESS ================= -->
 
-        <section class="progress-section">
+        <section class="progress-card">
 
-            <div class="progress-top">
+            <div class="progress-header">
 
                 <div>
-                    <h2>Study Progress</h2>
+
+                    <p class="small-heading">
+                        STUDY PROGRESS
+                    </p>
+
+                    <h2>
+                        Your Progress
+                    </h2>
 
                     <p id="progress-text">
                         0 of 17 subjects finished
                     </p>
+
                 </div>
 
-                <span id="progress-percentage">
+
+                <div
+                    id="progress-percentage"
+                    class="progress-percentage"
+                >
                     0%
-                </span>
+                </div>
 
             </div>
 
 
-            <div class="progress-bar">
+            <div class="progress-track">
 
                 <div id="progress-fill"></div>
 
@@ -81,23 +138,42 @@
         </section>
 
 
+
         <!-- ================= SUBJECTS ================= -->
 
         <section>
 
-            <div class="subjects-header">
+            <div class="subjects-toolbar">
 
-                <h2 class="section-title">
-                    Subjects
-                </h2>
+                <div>
 
-                <input
-                    type="text"
-                    id="subject-search"
-                    placeholder="Search subjects..."
-                >
+                    <p class="small-heading">
+                        EXAM MATERIAL
+                    </p>
+
+                    <h2>
+                        Subjects
+                    </h2>
+
+                </div>
+
+
+                <div class="search-box">
+
+                    <span>
+                        🔎
+                    </span>
+
+                    <input
+                        id="subject-search"
+                        type="search"
+                        placeholder="Search subjects..."
+                    >
+
+                </div>
 
             </div>
+
 
 
             <div class="subject-grid">
@@ -105,7 +181,10 @@
 
                 <!-- DIGITAL SKILLS -->
 
-                <article class="subject-card" data-name="digital skills">
+                <article
+                    class="subject-card"
+                    data-name="digital skills"
+                >
 
                     <div class="card-top">
 
@@ -129,19 +208,27 @@
 
                     <h3>Digital Skills</h3>
 
-                    <p>Study from the PowerPoint.</p>
+                    <p>
+                        Study from the PowerPoint.
+                    </p>
 
-                    <a class="button" href="digital-skills.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="digital-skills.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
 
 
 
-                <!-- ISLAMIC EDUCATION -->
+                <!-- ISLAMIC -->
 
-                <article class="subject-card" data-name="islamic education">
+                <article
+                    class="subject-card"
+                    data-name="islamic education"
+                >
 
                     <div class="card-top">
 
@@ -166,11 +253,15 @@
                     <h3>Islamic Education</h3>
 
                     <p>
-                        Understand both units and memorize important definitions.
+                        Understand both units and memorize
+                        important definitions.
                     </p>
 
-                    <a class="button" href="islamic.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="islamic.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -179,7 +270,10 @@
 
                 <!-- ARABIC -->
 
-                <article class="subject-card" data-name="arabic">
+                <article
+                    class="subject-card"
+                    data-name="arabic"
+                >
 
                     <div class="card-top">
 
@@ -204,11 +298,14 @@
                     <h3>Arabic</h3>
 
                     <p>
-                        Lessons and grammar from the available study materials.
+                        Lessons, grammar and study files.
                     </p>
 
-                    <a class="button" href="arabic.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="arabic.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -217,7 +314,10 @@
 
                 <!-- ENGLISH -->
 
-                <article class="subject-card" data-name="english">
+                <article
+                    class="subject-card"
+                    data-name="english"
+                >
 
                     <div class="card-top">
 
@@ -241,10 +341,15 @@
 
                     <h3>English</h3>
 
-                    <p>Exam material is not known yet.</p>
+                    <p>
+                        Exam material is not known yet.
+                    </p>
 
-                    <a class="button" href="english.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="english.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -253,7 +358,10 @@
 
                 <!-- MATHS -->
 
-                <article class="subject-card" data-name="maths mathematics">
+                <article
+                    class="subject-card"
+                    data-name="maths mathematics"
+                >
 
                     <div class="card-top">
 
@@ -277,10 +385,15 @@
 
                     <h3>Maths</h3>
 
-                    <p>Maths exam material and documents.</p>
+                    <p>
+                        Exam lessons and study documents.
+                    </p>
 
-                    <a class="button" href="maths.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="maths.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -289,7 +402,10 @@
 
                 <!-- PHYSICS -->
 
-                <article class="subject-card" data-name="physics">
+                <article
+                    class="subject-card"
+                    data-name="physics"
+                >
 
                     <div class="card-top">
 
@@ -314,11 +430,15 @@
                     <h3>Physics</h3>
 
                     <p>
-                        Theory from PowerPoint and solving from the book.
+                        Theory from PowerPoint and solving
+                        from the book.
                     </p>
 
-                    <a class="button" href="physics.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="physics.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -327,7 +447,10 @@
 
                 <!-- CHEMISTRY -->
 
-                <article class="subject-card" data-name="chemistry">
+                <article
+                    class="subject-card"
+                    data-name="chemistry"
+                >
 
                     <div class="card-top">
 
@@ -352,11 +475,15 @@
                     <h3>Chemistry</h3>
 
                     <p>
-                        Understand the material and memorize important definitions.
+                        Understand the material and memorize
+                        important definitions.
                     </p>
 
-                    <a class="button" href="chemistry.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="chemistry.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -365,7 +492,10 @@
 
                 <!-- BIOLOGY -->
 
-                <article class="subject-card" data-name="biology">
+                <article
+                    class="subject-card"
+                    data-name="biology"
+                >
 
                     <div class="card-top">
 
@@ -389,10 +519,15 @@
 
                     <h3>Biology</h3>
 
-                    <p>Study from the PowerPoint.</p>
+                    <p>
+                        Study from the PowerPoint.
+                    </p>
 
-                    <a class="button" href="biology.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="biology.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -401,7 +536,10 @@
 
                 <!-- EARTH SCIENCE -->
 
-                <article class="subject-card" data-name="earth science">
+                <article
+                    class="subject-card"
+                    data-name="earth science"
+                >
 
                     <div class="card-top">
 
@@ -425,19 +563,27 @@
 
                     <h3>Earth Science</h3>
 
-                    <p>Study the highlighted PDF.</p>
+                    <p>
+                        Study the highlighted PDF.
+                    </p>
 
-                    <a class="button" href="earth-science.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="earth-science.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
 
 
 
-                <!-- NATIONAL EDUCATION -->
+                <!-- NATIONAL -->
 
-                <article class="subject-card" data-name="national education">
+                <article
+                    class="subject-card"
+                    data-name="national education"
+                >
 
                     <div class="card-top">
 
@@ -461,10 +607,15 @@
 
                     <h3>National Education</h3>
 
-                    <p>Study the highlighted material.</p>
+                    <p>
+                        Study the highlighted material.
+                    </p>
 
-                    <a class="button" href="national.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="national.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -473,7 +624,10 @@
 
                 <!-- PHYSICAL EDUCATION -->
 
-                <article class="subject-card" data-name="physical education">
+                <article
+                    class="subject-card"
+                    data-name="physical education"
+                >
 
                     <div class="card-top">
 
@@ -497,19 +651,27 @@
 
                     <h3>Physical Education</h3>
 
-                    <p>I don't know yet if there is a test.</p>
+                    <p>
+                        I don't know yet if there is a test.
+                    </p>
 
-                    <a class="button" href="physical-education.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="physical-education.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
 
 
 
-                <!-- FINANCIAL CULTURE -->
+                <!-- FINANCIAL -->
 
-                <article class="subject-card" data-name="financial culture">
+                <article
+                    class="subject-card"
+                    data-name="financial culture"
+                >
 
                     <div class="card-top">
 
@@ -533,10 +695,15 @@
 
                     <h3>Financial Culture</h3>
 
-                    <p>Study from the PowerPoint.</p>
+                    <p>
+                        Study from the PowerPoint.
+                    </p>
 
-                    <a class="button" href="financial-culture.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="financial-culture.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -545,7 +712,10 @@
 
                 <!-- GEOGRAPHY -->
 
-                <article class="subject-card" data-name="geography">
+                <article
+                    class="subject-card"
+                    data-name="geography"
+                >
 
                     <div class="card-top">
 
@@ -569,10 +739,15 @@
 
                     <h3>Geography</h3>
 
-                    <p>Study the highlighted material.</p>
+                    <p>
+                        Study the highlighted material.
+                    </p>
 
-                    <a class="button" href="geography.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="geography.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -581,7 +756,10 @@
 
                 <!-- HISTORY -->
 
-                <article class="subject-card" data-name="history">
+                <article
+                    class="subject-card"
+                    data-name="history"
+                >
 
                     <div class="card-top">
 
@@ -605,10 +783,15 @@
 
                     <h3>History</h3>
 
-                    <p>Study the highlighted material.</p>
+                    <p>
+                        Study the highlighted material.
+                    </p>
 
-                    <a class="button" href="history.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="history.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -617,7 +800,10 @@
 
                 <!-- VOCATIONAL -->
 
-                <article class="subject-card" data-name="vocational education">
+                <article
+                    class="subject-card"
+                    data-name="vocational education"
+                >
 
                     <div class="card-top">
 
@@ -641,10 +827,15 @@
 
                     <h3>Vocational Education</h3>
 
-                    <p>I don't know yet if there is a test.</p>
+                    <p>
+                        I don't know yet if there is a test.
+                    </p>
 
-                    <a class="button" href="vocational.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="vocational.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -653,7 +844,10 @@
 
                 <!-- QURAN -->
 
-                <article class="subject-card" data-name="quran">
+                <article
+                    class="subject-card"
+                    data-name="quran"
+                >
 
                     <div class="card-top">
 
@@ -677,10 +871,15 @@
 
                     <h3>Quran</h3>
 
-                    <p>Known material: Surah Al-Kahf.</p>
+                    <p>
+                        Known material: Surah Al-Kahf.
+                    </p>
 
-                    <a class="button" href="quran.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="quran.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -689,7 +888,10 @@
 
                 <!-- ART -->
 
-                <article class="subject-card" data-name="art">
+                <article
+                    class="subject-card"
+                    data-name="art"
+                >
 
                     <div class="card-top">
 
@@ -713,10 +915,15 @@
 
                     <h3>Art</h3>
 
-                    <p>I don't know yet if there is a test.</p>
+                    <p>
+                        I don't know yet if there is a test.
+                    </p>
 
-                    <a class="button" href="art.html">
-                        Open Subject
+                    <a
+                        class="subject-button"
+                        href="art.html"
+                    >
+                        Open Subject →
                     </a>
 
                 </article>
@@ -724,20 +931,110 @@
 
             </div>
 
+
+            <p
+                id="no-results"
+                class="no-results hidden"
+            >
+                No subjects found.
+            </p>
+
         </section>
 
     </main>
+
 
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
 
-        <p>
-            Exam Study Hub
-        </p>
+        <p>Exam Study Hub</p>
 
     </footer>
+
+
+
+    <!-- ================= LOGIN WINDOW ================= -->
+
+    <div
+        id="login-overlay"
+        class="login-overlay hidden"
+    >
+
+        <div class="login-card">
+
+            <button
+                id="close-login"
+                class="close-login"
+            >
+                ×
+            </button>
+
+
+            <div class="login-icon">
+                👤
+            </div>
+
+
+            <h2>
+                Study Account
+            </h2>
+
+            <p>
+                Login or create an account.
+            </p>
+
+
+            <label>
+                Username
+            </label>
+
+            <input
+                id="username-input"
+                type="text"
+                placeholder="Enter username"
+                autocomplete="username"
+            >
+
+
+            <label>
+                Password
+            </label>
+
+            <input
+                id="password-input"
+                type="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+            >
+
+
+            <p
+                id="login-message"
+                class="login-message"
+            ></p>
+
+
+            <button
+                id="login-submit"
+                class="login-main-button"
+            >
+                Login
+            </button>
+
+
+            <button
+                id="register-submit"
+                class="register-button"
+            >
+                Create New Account
+            </button>
+
+        </div>
+
+    </div>
+
 
 
     <script src="script.js"></script>
