@@ -3,25 +3,21 @@
    ========================= */
 
 :root {
-
     --background: #f4f7fb;
-
     --card: #ffffff;
 
     --text: #182230;
-
     --text-light: #667085;
 
     --primary: #2563eb;
-
     --primary-hover: #1d4ed8;
 
     --border: #e4e7ec;
 
     --success: #16a34a;
-
     --success-background: #f0fdf4;
 
+    --danger: #dc2626;
 }
 
 
@@ -30,24 +26,20 @@
    ========================= */
 
 body.dark {
+    --background: #0f172a;
+    --card: #182235;
 
-    --background: #111827;
+    --text: #f8fafc;
+    --text-light: #aab4c4;
 
-    --card: #1f2937;
+    --border: #2c3950;
 
-    --text: #f9fafb;
-
-    --text-light: #cbd5e1;
-
-    --border: #374151;
-
-    --success-background: #132a1c;
-
+    --success-background: #10291b;
 }
 
 
 /* =========================
-   WHOLE PAGE
+   GENERAL
    ========================= */
 
 * {
@@ -61,32 +53,35 @@ html {
 
 
 body {
-
     margin: 0;
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     background-color: var(--background);
 
     color: var(--text);
 
-    transition: background-color 0.3s, color 0.3s;
-
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
 
-/* =========================
-   CONTAINER
-   ========================= */
+button,
+input {
+    font-family: inherit;
+}
+
 
 .container {
-
     width: 90%;
 
     max-width: 1200px;
 
     margin: auto;
-
 }
 
 
@@ -95,65 +90,133 @@ body {
    ========================= */
 
 header {
-
     background-color: var(--card);
 
     border-bottom: 1px solid var(--border);
 
-    padding: 20px 0;
+    padding: 18px 0;
 
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
 }
 
 
 .header-content {
-
     display: flex;
-
-    align-items: center;
 
     justify-content: space-between;
 
+    align-items: center;
+
+    gap: 20px;
 }
 
 
 header h1 {
-
     margin: 0;
 
-    font-size: 27px;
-
+    font-size: 26px;
 }
 
 
 .header-subtitle {
-
-    margin: 5px 0 0;
+    margin: 4px 0 0;
 
     color: var(--text-light);
 
+    font-size: 14px;
+}
+
+
+.header-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
 }
 
 
 /* =========================
-   DARK MODE BUTTON
+   HEADER BUTTONS
    ========================= */
 
-#theme-toggle {
-
-    width: 50px;
-
-    height: 50px;
-
+.account-button,
+.theme-button {
     border: 1px solid var(--border);
 
     background-color: var(--background);
 
-    border-radius: 12px;
+    color: var(--text);
+
+    border-radius: 11px;
+
+    padding: 10px 14px;
 
     cursor: pointer;
 
-    font-size: 20px;
+    font-size: 15px;
+}
 
+
+.account-button:hover,
+.theme-button:hover {
+    border-color: var(--primary);
+}
+
+
+.theme-button {
+    width: 45px;
+
+    height: 45px;
+
+    padding: 0;
+
+    font-size: 19px;
+}
+
+
+/* =========================
+   LOGGED USER
+   ========================= */
+
+.logged-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: var(--background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    padding: 6px 7px 6px 12px;
+}
+
+
+.username-label {
+    font-weight: bold;
+}
+
+
+.logout-button {
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: var(--primary);
+
+    color: white;
+
+    padding: 7px 10px;
+
+    cursor: pointer;
 }
 
 
@@ -162,31 +225,63 @@ header h1 {
    ========================= */
 
 .hero {
-
-    padding: 65px 20px 45px;
-
     text-align: center;
 
+    padding: 70px 20px 45px;
+}
+
+
+.hero-label,
+.small-heading {
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
 }
 
 
 .hero h2 {
-
-    margin: 0 0 12px;
+    margin: 8px 0 12px;
 
     font-size: 44px;
-
 }
 
 
-.hero p {
-
-    margin: 0;
-
+.hero p:last-child {
     color: var(--text-light);
 
     font-size: 18px;
+}
 
+
+/* =========================
+   ACCOUNT STATUS
+   ========================= */
+
+.account-status {
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    padding: 13px 18px;
+
+    margin-bottom: 22px;
+
+    color: var(--text-light);
+
+    text-align: center;
+}
+
+
+.account-status.logged-in {
+    color: var(--success);
+
+    border-color: var(--success);
 }
 
 
@@ -194,144 +289,161 @@ header h1 {
    PROGRESS
    ========================= */
 
-.progress-section {
-
+.progress-card {
     background-color: var(--card);
 
     border: 1px solid var(--border);
 
-    border-radius: 16px;
+    border-radius: 18px;
 
-    padding: 25px;
+    padding: 27px;
 
-    margin-bottom: 50px;
+    margin-bottom: 55px;
 
+    box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.05);
 }
 
 
-.progress-top {
-
+.progress-header {
     display: flex;
-
-    align-items: center;
 
     justify-content: space-between;
 
+    align-items: center;
+
     gap: 20px;
-
 }
 
 
-.progress-top h2 {
-
-    margin: 0 0 5px;
-
+.progress-header h2 {
+    margin: 5px 0 6px;
 }
 
 
-.progress-top p {
-
+.progress-header p {
     margin: 0;
 
     color: var(--text-light);
-
 }
 
 
-#progress-percentage {
-
-    color: var(--primary);
-
-    font-size: 28px;
+.progress-percentage {
+    font-size: 32px;
 
     font-weight: bold;
 
+    color: var(--primary);
 }
 
 
-.progress-bar {
+.progress-track {
+    width: 100%;
 
-    height: 13px;
+    height: 14px;
 
-    margin-top: 20px;
+    margin-top: 24px;
 
     background-color: var(--border);
 
     border-radius: 50px;
 
     overflow: hidden;
-
 }
 
 
 #progress-fill {
-
     width: 0%;
 
     height: 100%;
 
-    background-color: var(--success);
+    background:
+        linear-gradient(
+            90deg,
+            #22c55e,
+            #16a34a
+        );
 
     border-radius: 50px;
 
     transition: width 0.4s ease;
-
 }
 
 
 /* =========================
-   SUBJECT HEADER
+   SUBJECT TOOLBAR
    ========================= */
 
-.subjects-header {
-
+.subjects-toolbar {
     display: flex;
 
     justify-content: space-between;
 
+    align-items: end;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.subjects-toolbar h2 {
+    margin: 5px 0 0;
+
+    font-size: 30px;
+}
+
+
+/* =========================
+   SEARCH
+   ========================= */
+
+.search-box {
+    display: flex;
+
     align-items: center;
 
-    gap: 20px;
+    gap: 10px;
 
-    margin-bottom: 20px;
+    width: 330px;
 
-}
-
-
-.section-title {
-
-    margin: 0;
-
-}
-
-
-#subject-search {
-
-    width: 280px;
-
-    max-width: 100%;
-
-    padding: 12px 15px;
+    background-color: var(--card);
 
     border: 1px solid var(--border);
 
-    border-radius: 10px;
+    border-radius: 14px;
 
-    background-color: var(--card);
+    padding: 12px 16px;
+
+    transition: 0.2s;
+}
+
+
+.search-box:focus-within {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
 
     color: var(--text);
 
     font-size: 16px;
-
-    outline: none;
-
 }
 
 
-#subject-search:focus {
-
-    border-color: var(--primary);
-
+.search-box input::placeholder {
+    color: var(--text-light);
 }
 
 
@@ -340,14 +452,15 @@ header h1 {
    ========================= */
 
 .subject-grid {
-
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
+        repeat(
+            auto-fit,
+            minmax(245px, 1fr)
+        );
 
     gap: 20px;
-
 }
 
 
@@ -356,14 +469,13 @@ header h1 {
    ========================= */
 
 .subject-card {
-
     background-color: var(--card);
 
     border: 1px solid var(--border);
 
-    border-radius: 16px;
+    border-radius: 17px;
 
-    padding: 24px;
+    padding: 23px;
 
     min-height: 270px;
 
@@ -372,62 +484,47 @@ header h1 {
     flex-direction: column;
 
     transition:
-        transform 0.2s,
-        box-shadow 0.2s,
-        opacity 0.2s;
-
+        0.2s transform,
+        0.2s box-shadow,
+        0.2s border-color;
 }
 
 
 .subject-card:hover {
-
     transform: translateY(-5px);
 
     box-shadow:
-        0 12px 25px rgba(0, 0, 0, 0.08);
-
+        0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-
-.subject-card h3 {
-
-    margin: 18px 0 8px;
-
-    font-size: 23px;
-
-}
-
-
-.subject-card p {
-
-    color: var(--text-light);
-
-    line-height: 1.5;
-
-    flex-grow: 1;
-
-}
-
-
-/* =========================
-   CARD TOP
-   ========================= */
 
 .card-top {
-
     display: flex;
-
-    justify-content: space-between;
 
     align-items: center;
 
+    justify-content: space-between;
 }
 
 
 .subject-icon {
+    font-size: 35px;
+}
 
-    font-size: 34px;
 
+.subject-card h3 {
+    margin: 18px 0 8px;
+
+    font-size: 22px;
+}
+
+
+.subject-card p {
+    color: var(--text-light);
+
+    line-height: 1.55;
+
+    flex-grow: 1;
 }
 
 
@@ -436,106 +533,308 @@ header h1 {
    ========================= */
 
 .check-area {
-
     display: flex;
 
     align-items: center;
 
     gap: 7px;
 
-    cursor: pointer;
-
     color: var(--text-light);
 
-    font-size: 14px;
+    cursor: pointer;
 
+    font-size: 14px;
 }
 
 
 .subject-checkbox {
+    width: 20px;
 
-    width: 19px;
-
-    height: 19px;
-
-    cursor: pointer;
+    height: 20px;
 
     accent-color: var(--success);
 
+    cursor: pointer;
 }
 
 
 /* =========================
-   COMPLETED SUBJECT
+   COMPLETED CARD
    ========================= */
 
 .subject-card.completed {
-
-    border-color: var(--success);
-
     background-color: var(--success-background);
 
+    border-color: var(--success);
 }
 
 
 .subject-card.completed h3 {
-
     text-decoration: line-through;
 
+    opacity: 0.7;
 }
 
 
 .subject-card.completed .check-area {
-
     color: var(--success);
 
     font-weight: bold;
-
 }
 
 
 /* =========================
-   BUTTON
+   SUBJECT BUTTON
    ========================= */
 
-.button {
-
+.subject-button {
     display: inline-block;
 
     width: fit-content;
 
-    margin-top: 12px;
-
-    padding: 11px 18px;
+    margin-top: 10px;
 
     background-color: var(--primary);
 
     color: white;
 
-    text-decoration: none;
+    padding: 10px 16px;
 
     border-radius: 9px;
 
-    transition: background-color 0.2s;
+    text-decoration: none;
 
+    transition: 0.2s;
 }
 
 
-.button:hover {
-
+.subject-button:hover {
     background-color: var(--primary-hover);
 
+    transform: translateY(-1px);
 }
 
 
 /* =========================
-   SEARCH HIDDEN CARDS
+   NO RESULTS
    ========================= */
 
-.subject-card.hidden {
+.no-results {
+    text-align: center;
 
-    display: none;
+    padding: 50px;
 
+    color: var(--text-light);
+}
+
+
+/* =========================
+   LOGIN OVERLAY
+   ========================= */
+
+.login-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background-color:
+        rgba(0, 0, 0, 0.55);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+.login-card {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 410px;
+
+    background-color: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+.login-icon {
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: var(--background);
+
+    border-radius: 16px;
+
+    font-size: 28px;
+}
+
+
+.login-card h2 {
+    margin-bottom: 5px;
+}
+
+
+.login-card > p {
+    color: var(--text-light);
+
+    margin-bottom: 25px;
+}
+
+
+.login-card label {
+    display: block;
+
+    margin:
+        15px 0
+        7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+.login-card input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+
+
+.login-card input:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+
+.close-login {
+    position: absolute;
+
+    right: 20px;
+
+    top: 15px;
+
+    border: none;
+
+    background: none;
+
+    color: var(--text-light);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   LOGIN BUTTONS
+   ========================= */
+
+.login-main-button,
+.register-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+}
+
+
+.login-main-button {
+    margin-top: 18px;
+
+    background-color: var(--primary);
+
+    color: white;
+}
+
+
+.login-main-button:hover {
+    background-color: var(--primary-hover);
+}
+
+
+.register-button {
+    margin-top: 10px;
+
+    background-color: var(--background);
+
+    color: var(--text);
+
+    border: 1px solid var(--border);
+}
+
+
+.login-message {
+    min-height: 20px;
+
+    margin: 13px 0 0 !important;
+
+    font-size: 14px;
+}
+
+
+.login-message.error {
+    color: var(--danger);
+}
+
+
+.login-message.success {
+    color: var(--success);
+}
+
+
+/* =========================
+   UTILITIES
+   ========================= */
+
+.hidden {
+    display: none !important;
 }
 
 
@@ -544,49 +843,68 @@ header h1 {
    ========================= */
 
 footer {
+    margin-top: 70px;
 
-    padding: 50px 20px;
+    padding: 35px;
 
     text-align: center;
 
     color: var(--text-light);
-
 }
 
 
 /* =========================
-   SMALL SCREENS
+   MOBILE
    ========================= */
 
 @media (max-width: 700px) {
 
-    .hero h2 {
-
-        font-size: 34px;
-
+    .header-content {
+        align-items: flex-start;
     }
 
 
-    .subjects-header {
+    header h1 {
+        font-size: 21px;
+    }
 
-        align-items: stretch;
 
+    .hero {
+        padding-top: 45px;
+    }
+
+
+    .hero h2 {
+        font-size: 34px;
+    }
+
+
+    .subjects-toolbar {
         flex-direction: column;
 
+        align-items: stretch;
     }
 
 
-    #subject-search {
-
+    .search-box {
         width: 100%;
-
     }
 
 
-    .progress-top {
-
+    .progress-header {
         align-items: flex-start;
+    }
 
+
+    .progress-percentage {
+        font-size: 26px;
+    }
+
+
+    .logged-user {
+        flex-direction: column;
+
+        align-items: stretch;
     }
 
 }
